@@ -1,6 +1,6 @@
 /*
 
-  Components/Buttons
+  components/buttons
     Contains generic buttons
     Allows extension of generic buttons
 
@@ -23,4 +23,13 @@
     background: darken($color, 5%);
   }
 
+}
+
+
+// Extended Button
+// ----------------------------------------
+
+.button {
+  @extend %button;
+  @include button(#eee);
 }

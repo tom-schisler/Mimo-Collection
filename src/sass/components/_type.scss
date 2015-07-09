@@ -1,0 +1,103 @@
+/*
+
+  components/type
+
+*/
+
+// ========================================
+// Headings
+// ========================================
+
+%heading {
+  font-weight: normal;
+}
+
+
+// 1:Heading One
+// ----------------------------------------
+
+h1,
+.h1 {
+  @extend %heading;
+  font-size: em($h1-size);
+}
+
+@mixin h1 {
+  @extend %heading;
+  font-size: em($h1-size);
+}
+
+
+// 2:Heading Two
+// ----------------------------------------
+
+h2,
+.h2 {
+  @extend %heading;
+  font-size: em($h2-size);
+}
+
+@mixin h2 {
+  @extend %heading;
+  font-size: em($h2-size);
+}
+
+
+// 3:Heading Three
+// ----------------------------------------
+
+h3,
+.h3 {
+  @extend %heading;
+  font-size: em($h3-size);
+}
+
+@mixin h3 {
+  @extend %heading;
+  font-size: em($h3-size);
+}
+
+
+// 4:Heading Four
+// ----------------------------------------
+
+h4,
+.h4 {
+  @extend %heading;
+  font-size: em($h4-size);
+}
+
+@mixin h4 {
+  @extend %heading;
+  font-size: em($h4-size);
+}
+
+
+// 5:Heading Five
+// ----------------------------------------
+
+h5,
+.h5 {
+  @extend %heading;
+  font-size: em($h5-size);
+}
+
+@mixin h5 {
+  @extend %heading;
+  font-size: em($h5-size);
+}
+
+
+// 6:Heading Six
+// ----------------------------------------
+
+h6,
+.h6 {
+  @extend %heading;
+  font-size: em($h6-size);
+}
+
+@mixin h6 {
+  @extend %heading;
+  font-size: em($h6-size);
+}
