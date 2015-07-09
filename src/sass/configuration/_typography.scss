@@ -1,0 +1,46 @@
+/*
+
+  Configuration/Typography v.0.1.0
+    Stores values such as heading sizes, font families
+
+*/
+
+
+// ========================================
+// Font Families
+// ========================================
+
+$sans-serif: null;
+
+$serif: null
+
+$slab: null;
+
+$display: null;
+
+$handwriting: null;
+
+
+// ========================================
+// Heading Properties
+// ========================================
+
+$h1-size: 40;
+
+$h2-size: 35;
+
+$h3-size: 30;
+
+$h4-size: 25;
+
+$h5-size: 20;
+
+$h6-size: $body-size;
+
+
+// ========================================
+// Body Font Properties
+// ========================================
+
+$content-size: 16;
+$content-line: 22;

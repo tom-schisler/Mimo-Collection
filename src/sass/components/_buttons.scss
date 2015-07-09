@@ -1,0 +1,16 @@
+/*
+
+  Components/Buttons v.0.1.0
+    Contains generic buttons
+    Allows extension of generic buttons
+
+*/
+
+// ========================================
+// Generic Buttons
+// ========================================
+
+@mixin button($color) {
+  background: $color;
+  border-color: $color;
+}

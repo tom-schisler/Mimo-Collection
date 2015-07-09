@@ -1,0 +1,72 @@
+/*
+
+  Manifest v.0.1.0
+    Gathers all partials,
+    Compiles into manifest.css
+
+*/
+
+
+// ========================================
+// Configuration
+// Configures cascading site variables
+// ========================================
+
+@import
+  'configuration/dynamic.scss',
+  'configuration/static.scss',
+  'configuration/typography.scss';
+
+
+// ========================================
+// Utilities
+// Creates tools for use during production
+// ========================================
+
+@import
+ 'utilities/common.scss',
+ 'utilities/functions.scss',
+ 'utilities/unique.scss';
+
+
+// ========================================
+// Structure
+// Defines vendor partials
+// ========================================
+
+@import
+ 'vendor/normalize.scss';
+
+
+// ========================================
+// Structure
+// Defines general site appearance
+// ========================================
+
+@import
+ 'structure/root.scss',
+ 'structure/sections.scss',
+ 'structure/layouts.scss';
+
+
+// ========================================
+// Components
+// Defines widely used components
+// ========================================
+
+@import
+ 'structure/type.scss',
+ 'structure/callouts.scss',
+ 'structure/buttons.scss',
+ 'structure/forms.scss';
+
+
+// ========================================
+// UI-Patterns
+// Defines highly specialized components
+// ========================================
+
+@import
+ 'ui-patterns/accordion.scss',
+ 'ui-patterns/tabs.scss',
+ 'ui-patterns/slideshow.scss';

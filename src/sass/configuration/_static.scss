@@ -1,0 +1,57 @@
+/*
+
+  Configuration/Static v.0.1.0
+    Stores values that never change
+
+*/
+
+
+// ========================================
+// Flexpoints
+// ========================================
+
+$micro: 200;
+$tiny: 300;
+$small: 400;
+$medium: 500;
+$large: 600;
+$huge: 700;
+$gigantic: 800;
+$titan: 900;
+$world: 1000;
+$galaxy: 1100;
+$universe: 1200;
+$multiverse: 1300;
+
+$boundary: $site-boundry;
+$boundary-plus: $site-boundry + $gutter * 2;
+
+
+// ========================================
+// Gamedex
+// ========================================
+
+// https://css-tricks.com/handling-z-index/
+
+$underground: 100;
+$background: 200;
+$character: 300;
+$foreground: 400;
+$sunglasses: 800;
+
+
+// ========================================
+// Font weights
+// ========================================
+
+// http://help.typekit.com/customer/portal/articles/6855-using-multiple-weights-and-styles
+
+$thin: 100;
+$extra-light: 200;
+$light: 300;
+$normal: 400;
+$medium: 500;
+$semi-bold: 600;
+$bold: 700;
+$heavy: 800;
+$black: 900;
