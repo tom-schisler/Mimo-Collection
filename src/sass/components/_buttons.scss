@@ -1,6 +1,6 @@
 /*
 
-  Components/Buttons v.0.1.0
+  Components/Buttons
     Contains generic buttons
     Allows extension of generic buttons
 
@@ -10,7 +10,17 @@
 // Generic Buttons
 // ========================================
 
+%button {
+  display: inline-block;
+  text-align: center;
+}
+
 @mixin button($color) {
   background: $color;
   border-color: $color;
+
+  &:hover {
+    background: darken($color, 5%);
+  }
+
 }
