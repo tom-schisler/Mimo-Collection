@@ -1,5 +1,44 @@
 /*
 
   utilities/functions
+    contains a set of functions for converting values
 
 */
+
+// ========================================
+// Calculate em
+// ========================================
+
+// maybe?
+// http://css-tricks.com/snippets/sass/px-to-em-functions/
+
+@function em($target, $context: $body-font-size) {
+  $strip-target: su($target);
+  $strip-context: su($context);
+  @return ($strip-target / $strip-context) * 1em;
+}
+
+
+// ========================================
+// Calculate rem
+// ========================================
+
+// maybe?
+// http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
+
+@function rem($target, $context: 16) {
+  $strip-target: su($target);
+  $strip-context: su($context);
+  @return ($strip-target / $strip-context) * 1rem;
+}
+
+
+// ========================================
+// Strip units
+// ========================================
+
+// http://css-tricks.com/snippets/sass/strip-unit-function/
+
+@function su($num) {
+  @return $num / ($num * 0 + 1);
+}

@@ -1,8 +1,8 @@
 /*
 
   structure/layouts
-    Creates a column layout structure,
-    Contains styles for any columns
+    creates a column layout structure,
+    contains styles for generic columns
 
 */
 
@@ -14,34 +14,6 @@
 // http://www.smashingmagazine.com/2009/08/17/taming-advanced-css-selectors/
 // Style a generic column class first
 
-[class^='col'] {
+[class^='column'] {
   margin: 0 auto;
-}
-
-// Create a silent extension for column groups greater than 1
-
-%floated-column {
-
-}
-
-// 1:One Column
-// ----------------------------------------
-
-.col-1 {
-
-  @include breakpoint($bp-world) {
-    width: 75%;
-  }
-
-}
-
-// 2:Two Column
-// ----------------------------------------
-
-.col-2 {
-
-  @include breakpoint($bp-huge) {
-    width: 75%;
-  }
-
 }

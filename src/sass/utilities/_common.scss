@@ -1,5 +1,78 @@
 /*
 
   utilities/common
+    these are mixins that are frequently used to achieve a particular task
 
 */
+
+// ========================================
+// Media
+// ========================================
+
+@mixin media($breakpoint, $adapt: false) {
+
+  // $adapt: true
+  // the returned value will be larger depending on $content-size
+  // this is good for styling generic columns with variable size text
+  @if $adapt {
+
+    @media (min-width: em($breakpoint)) {
+      @content;
+    }
+
+  }
+  // $adapt: false
+  // this is meant for frequent use, when the exact breakpoint is required
+  @else {
+
+    @media (min-width: $breakpoint / 16 * 1em) {
+      @content;
+    }
+
+  }
+
+}
+
+
+// ========================================
+// Font Icon
+// ========================================
+
+// Example usage:
+// .label {
+//   &:before {
+//     @include font-icon('\f0d2');
+//   }
+// }
+
+@mixin font-icon($glyph) {
+  font-family: $font-icon;
+  font-weight: normal;
+  content: $glyph;
+}
+
+
+// ========================================
+// Clearfix
+// ========================================
+
+// Example Usage:
+// .contains-floats {
+//   @include clear;
+// }
+
+@mixin clear {
+  zoom: 1;
+
+  &:after {
+    display: table;
+    clear: both;
+    content: '';
+  }
+
+}
+
+.clearfix {
+  @include clear;
+  clear: both;
+}

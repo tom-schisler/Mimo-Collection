@@ -1,7 +1,7 @@
 /*
 
   components/type
-
+    contains heading properties that are custom and from the configuration file
 */
 
 // ========================================
@@ -16,88 +16,127 @@
 // 1:Heading One
 // ----------------------------------------
 
-h1,
-.h1 {
+@mixin h1 {
   @extend %heading;
   font-size: em($h1-size);
 }
 
-@mixin h1 {
-  @extend %heading;
-  font-size: em($h1-size);
+h1,
+.h1 {
+  @include h1;
 }
 
 
 // 2:Heading Two
 // ----------------------------------------
 
-h2,
-.h2 {
+@mixin h2 {
   @extend %heading;
   font-size: em($h2-size);
 }
 
-@mixin h2 {
-  @extend %heading;
-  font-size: em($h2-size);
+h2,
+.h2 {
+  @include h2;
 }
 
 
 // 3:Heading Three
 // ----------------------------------------
 
-h3,
-.h3 {
+@mixin h3 {
   @extend %heading;
   font-size: em($h3-size);
 }
 
-@mixin h3 {
-  @extend %heading;
-  font-size: em($h3-size);
+h3,
+.h3 {
+  @include h3;
 }
 
 
 // 4:Heading Four
 // ----------------------------------------
 
-h4,
-.h4 {
+@mixin h4 {
   @extend %heading;
   font-size: em($h4-size);
 }
 
-@mixin h4 {
-  @extend %heading;
-  font-size: em($h4-size);
+h4,
+.h4 {
+  @include h4;
 }
 
 
 // 5:Heading Five
 // ----------------------------------------
 
-h5,
-.h5 {
+@mixin h5 {
   @extend %heading;
   font-size: em($h5-size);
 }
 
-@mixin h5 {
-  @extend %heading;
-  font-size: em($h5-size);
+h5,
+.h5 {
+  @include h5;
 }
 
 
 // 6:Heading Six
 // ----------------------------------------
 
-h6,
-.h6 {
+@mixin h6 {
   @extend %heading;
   font-size: em($h6-size);
 }
 
-@mixin h6 {
-  @extend %heading;
-  font-size: em($h6-size);
+h6,
+.h6 {
+  @include h6;
+}
+
+
+// ========================================
+// Font Families
+// ========================================
+
+.serif {
+  font-family: $serif;
+}
+
+.sans-serif {
+  font-weight: $sans-serif;
+}
+
+
+// ========================================
+// Font Styles
+// ========================================
+
+// http://stackoverflow.com/questions/1680624/font-style-italic-vs-oblique-in-css
+
+.italic {
+  font-style: italic;
+}
+
+.oblique {
+  font-style: oblique;
+}
+
+
+// ========================================
+// Common Font Weights
+// ========================================
+
+.light {
+  font-weight: $light;
+}
+
+.medium {
+  font-size: $medium;
+}
+
+.bold {
+  font-weight: $bold;
 }
