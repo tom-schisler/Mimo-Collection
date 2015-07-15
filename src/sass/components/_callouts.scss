@@ -1,5 +1,79 @@
 /*
 
   components/callouts
+    styles for components that grab attention or organize data
 
 */
+
+
+// ========================================
+// Blockquote
+// ========================================
+
+blockquote {}
+
+// Cite
+// ----------------------------------------
+
+cite {}
+
+
+// ========================================
+// Table
+// ========================================
+
+table {
+  width: 100%;
+  margin-bottom: em($gutter);
+  border-collapse: collapse;
+
+  tr {}
+
+    th,
+    td {
+      vertical-align: top;
+    }
+
+    th {
+      padding: em($gutter);
+      background: rgba(#000, .15);
+    }
+
+    td {
+      padding: em($gutter);
+
+      @at-root tr:nth-of-type(odd) td {
+        background-color: rgba(#000, .05);
+      }
+
+    }
+
+}
+
+
+// ========================================
+// Paragraphs
+// ========================================
+
+p {}
+
+
+// ========================================
+// Lists
+// ========================================
+
+ul,
+ol {}
+
+
+// ========================================
+// Links
+// ========================================
+
+a {
+
+  &:hover {}
+
+  &:visited {}
+
+}

@@ -1,8 +1,8 @@
 /*
 
-  Manifest v.0.1.0
-    Gathers all partials,
-    Compiles into manifest.css
+  manifest
+    gathers all partials,
+    compiles into manifest.css
 
 */
 
@@ -27,6 +27,22 @@
  'utilities/common.scss',
  'utilities/functions.scss',
  'utilities/unique.scss';
+
+
+// ========================================
+// Mimo
+// Creates tools for really nice things
+// ========================================
+
+@import
+ 'mimo/canvas.scss',
+ 'mimo/columns.scss',
+ 'mimo/nudibranch.scss',
+ 'mimo/sonic-slide.scss';
+
+// Additional pieces that were not included (but still really useful!)
+// Salamander positioning: http://codepen.io/mimoduo/pen/vhlEj
+// Favaro Pivot: http://codepen.io/mimoduo/pen/pvRZKo
 
 
 // ========================================
@@ -59,14 +75,3 @@
  'structure/callouts.scss',
  'structure/buttons.scss',
  'structure/forms.scss';
-
-
-// ========================================
-// UI-Patterns
-// Defines highly specialized components
-// ========================================
-
-@import
- 'ui-patterns/accordion.scss',
- 'ui-patterns/tabs.scss',
- 'ui-patterns/slideshow.scss';

@@ -1,0 +1,38 @@
+/*
+
+  mimo/columns
+    creates columns along several custom breakpoints
+    http://codepen.io/mimoduo/pen/zxqEvB
+    also known as caterpillar columns
+
+*/
+
+
+// ========================================
+// Column Mixin
+// ========================================
+
+//www.sitepoint.com/scaling-values-across-breakpoints-using-sass/
+//www.sitepoint.com/sass-multiple-arguments-lists-or-arglist/
+
+$inline-block-negation: 1%;
+
+@mixin column($spread...) {
+  $argument-length: length($spread);
+  $argument-split: $argument-length / 2;
+
+  @for $i from 1 through $argument-split {
+
+    @media (min-width: nth($spread, ($argument-split + $i))) {
+      width: percentage(1 / nth($spread, $i)) - $inline-block-negation;
+
+      @if $i == 1 {
+        display: inline-block;
+        vertical-align: top;
+      }
+
+    }
+
+  }
+
+}
