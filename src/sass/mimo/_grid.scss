@@ -1,0 +1,86 @@
+// ================
+// Grid
+// ================
+
+// 1: All grids have their right and left margins pulled outward by default
+// 1: This ensures that the columns inside will be flush with the grid container
+// 2: &:after is used as a clearfix to clear all floated columns within a grid
+.grid {
+  margin: 0 $column-between * -1;
+
+  &:after {
+    clear: both;
+    display: table;
+    content: '';
+  }
+
+}
+
+
+// ================
+// Columns
+// ================
+
+// 1: All columns must begin with the class of 'col' within your markup
+// 1: If the dependency on that class string is low, you may change the '^' filter to '*'
+// 2: Or change this to a generic class rather than a filtered selector
+// 2: All columns are float left by default
+// 2: This reduces the amount of float declarations and media queries without sacrificing integrity
+// 3: All columns have right and left margins pushed inward by default
+// 3: This reduces the amount of margin declarations and media queries without sacrificing integrity
+// 4: All columns are width 98% by default
+// 4: This is in effect of default margins and will be negated by the grid container's default margins
+[class^='col'] {
+  float: left;
+  margin: 0 $column-between $column-between * 2;
+  width: 98%;
+}
+
+// Iterates through a loop given the amount of breakpoints with $breakpoints
+@for $i from 1 to length($breakpoints) + 1 {
+
+  // Iterates through each breakpoint within $breakpoints
+  @media (min-width: nth(nth($breakpoints, $i), 2)) {
+
+    // Creates default column classes
+    @for $x from 1 to $column-base {
+
+      // Given the index of this loop, how many columns does that take up?
+      .col-#{nth(nth($breakpoints, $i), 1)}-#{$x} {
+        width: 100% / $column-base * $x - $column-between * 2;
+      }
+
+    }
+
+    // Create 'push' classes *if* $column-push-desired is set to true
+    @if $column-push-desired {
+
+      @for $x from 1 to $column-base {
+
+        // Push classes push a column x number of columns on it's left
+        // Given the index of this loop, how many columns does this push on the left?
+        .col-#{nth(nth($breakpoints, $i), 1)}-push-#{$x} {
+          margin-left: 100% / $column-base * $x + $column-between;
+        }
+
+      }
+
+    }
+
+    // Create 'pull' classes *if* $column-push-desired is set to true
+    @if $column-pull-desired {
+
+      @for $x from 1 to $column-base {
+
+        // My boss told me he used this once
+        .col-#{nth(nth($breakpoints, $i), 1)}-pull-#{$x} {
+          margin-left: 100% / $column-base * $x * -1 + $column-between;
+        }
+
+      }
+
+    }
+
+  }
+
+}

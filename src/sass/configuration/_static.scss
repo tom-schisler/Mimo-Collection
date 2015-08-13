@@ -7,7 +7,7 @@
 
 
 // ========================================
-// Flexpoints
+// Breakpoints
 // ========================================
 
 $micro: 200;
@@ -25,6 +25,20 @@ $multiverse: 1300;
 
 $boundary: $site-boundry;
 $boundary-plus: $site-boundry + $gutter * 2;
+
+// Create a multidimensial array to store breakpoint aliases & respective values
+$breakpoints: (
+  ('mini', 300px),
+  ('tiny', 400px),
+  ('small', 500px),
+  ('medium', 600px),
+  ('big', 700px),
+  ('large', 800px),
+  ('huge', 900px),
+  ('nation', 1000px),
+  ('world', 1100px),
+  ('galaxy', 1200px)
+);
 
 
 // ========================================

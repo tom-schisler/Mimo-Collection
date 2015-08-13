@@ -49,6 +49,7 @@
   font-family: $font-icon;
   font-weight: normal;
   content: $glyph;
+  speak: none;
 }
 
 
@@ -72,7 +73,6 @@
 
 }
 
-.clearfix {
+.clear {
   @include clear;
-  clear: both;
 }

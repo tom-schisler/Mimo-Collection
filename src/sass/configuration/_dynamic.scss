@@ -16,6 +16,24 @@ $font-dir: $layout-dir + 'fonts/';
 
 
 // ========================================
+// Column Setup
+// ========================================
+
+// Number of columns the grid is based off of
+$column-base: 12;
+
+// Half the space between each column
+// Defines the bottom margin of each column
+$column-between: 1%;
+
+// Do you need to utilize the push feature of this grid system?
+$column-push-desired: true;
+
+// Do you need to utilize the pull feature of this grid system?
+$column-pull-desired: true;
+
+
+// ========================================
 // Situational Flexpoints
 // ========================================
 
