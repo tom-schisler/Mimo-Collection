@@ -10,6 +10,35 @@
 // Draggable Ruler
 // ========================================
 
+.ruler {
+  @include cover;
+  cursor: move;
+
+  &:before,
+  &:after {
+    position: absolute;
+    content: '';
+    background: deeppink;
+  }
+
+  &:before {
+    top: 50%;
+    left: 0;
+    height: em(4);
+    width: 100%;
+    transform: translate(0, -50%);
+  }
+
+  &:after {
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: em(4);
+    transform: translate(-50%, 0);
+  }
+
+}
+
 
 // ========================================
 // Overlay Grid

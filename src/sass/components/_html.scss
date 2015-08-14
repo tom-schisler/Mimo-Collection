@@ -38,7 +38,9 @@ blockquote {
 // Cite
 // ----------------------------------------
 
-cite {}
+cite {
+  font-style: normal;
+}
 
 
 // ========================================
@@ -64,6 +66,7 @@ table {
   width: 100%;
   margin-bottom: em($gutter);
   border-collapse: collapse;
+}
 
   tr {}
 
@@ -74,6 +77,7 @@ table {
 
     th {
       padding: em($gutter);
+      font-weight: normal;
     }
 
     td {
@@ -84,5 +88,3 @@ table {
       }
 
     }
-
-}

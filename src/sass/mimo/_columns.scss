@@ -12,8 +12,8 @@
 // Column Mixin
 // ========================================
 
-//www.sitepoint.com/scaling-values-across-breakpoints-using-sass/
-//www.sitepoint.com/sass-multiple-arguments-lists-or-arglist/
+// www.sitepoint.com/scaling-values-across-breakpoints-using-sass/
+// www.sitepoint.com/sass-multiple-arguments-lists-or-arglist/
 
 @mixin column($spread...) {
   $argument-length: length($spread);

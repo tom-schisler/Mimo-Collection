@@ -10,18 +10,18 @@
 // Breakpoints
 // ========================================
 
-$micro: 200;
-$tiny: 300;
-$small: 400;
-$medium: 500;
-$large: 600;
-$huge: 700;
-$gigantic: 800;
-$titan: 900;
-$world: 1000;
-$galaxy: 1100;
-$universe: 1200;
-$multiverse: 1300;
+$mini: 300;
+$tiny: 400;
+$small: 500;
+$medium: 600;
+$big: 700;
+$large: 800;
+$huge: 900;
+$nation: 1000;
+$world: 1100;
+$galaxy: 1200;
+$universe: 1300;
+$penguindrum: 1400;
 
 $boundary: $site-boundry;
 $boundary-plus: $site-boundry + $gutter * 2;
@@ -37,7 +37,9 @@ $breakpoints: (
   ('huge', 900px),
   ('nation', 1000px),
   ('world', 1100px),
-  ('galaxy', 1200px)
+  ('galaxy', 1200px),
+  ('universe', 1300px),
+  ('penguindrum', 1400px)
 );
 
 
