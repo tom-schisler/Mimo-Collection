@@ -6,6 +6,7 @@
 
 */
 
+
 // ========================================
 // Generic Buttons
 // ========================================
@@ -32,4 +33,24 @@
 .button {
   @extend %button;
   @include button(#eee);
+}
+
+
+// ========================================
+// Site Logo
+// ========================================
+
+.site-logo {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+  background: url($image-dir + 'logo.png') no-repeat 0 0;
+  background-size: contain;
+  color: transparent;
+
+  &:hover {
+    color: transparent;
+  }
+
 }

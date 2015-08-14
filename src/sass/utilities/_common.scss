@@ -1,9 +1,10 @@
 /*
 
   utilities/common
-    these are mixins that are frequently used to achieve a particular task
+    mixins that are frequently used to achieve a common task
 
 */
+
 
 // ========================================
 // Media
@@ -12,7 +13,7 @@
 @mixin media($breakpoint, $adapt: false) {
 
   // $adapt: true
-  // the returned value will be larger depending on $content-size
+  // the returned value will be larger or smaller depending on $content-size
   // this is good for styling generic columns with variable size text
   @if $adapt {
 
@@ -31,25 +32,6 @@
 
   }
 
-}
-
-
-// ========================================
-// Font Icon
-// ========================================
-
-// Example usage:
-// .label {
-//   &:before {
-//     @include font-icon('\f0d2');
-//   }
-// }
-
-@mixin font-icon($glyph) {
-  font-family: $font-icon;
-  font-weight: normal;
-  content: $glyph;
-  speak: none;
 }
 
 
@@ -75,4 +57,48 @@
 
 .clear {
   @include clear;
+}
+
+
+// ========================================
+// Font Icon
+// ========================================
+
+// Example usage:
+// .heart-icon {
+//   &:before {
+//     @include icon('\f0d2');
+//   }
+// }
+
+@mixin icon($glyph: '') {
+  font-family: $font-icon;
+  font-weight: normal;
+  content: $glyph;
+  speak: none;
+}
+
+.icon {
+
+  &:before {
+    @include icon;
+  }
+
+}
+
+
+// ========================================
+// Cover
+// ========================================
+
+@mixin cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.cover {
+  @include cover;
 }

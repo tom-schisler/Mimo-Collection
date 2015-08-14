@@ -18,7 +18,6 @@
   box-sizing: border-box;
 }
 
-// Separate universal psuedo selectors for performance
 // Remove pointer-events to prevent overlays from being clickable
 
 *:before,
@@ -31,8 +30,6 @@
 // ========================================
 // html & body
 // ========================================
-
-// consider //usabilitypost.com/2012/11/05/stop-fixing-font-smoothing/
 
 html {
   font-family: $sans-serif;

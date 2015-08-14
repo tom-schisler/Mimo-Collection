@@ -1,16 +1,14 @@
 /*
 
   utilities/functions
-    contains a set of functions for converting values
+    contains a set of functions for converting values or stripping units
 
 */
+
 
 // ========================================
 // Calculate em
 // ========================================
-
-// maybe?
-// http://css-tricks.com/snippets/sass/px-to-em-functions/
 
 @function em($target, $context: $body-font-size) {
   $strip-target: su($target);
@@ -22,9 +20,6 @@
 // ========================================
 // Calculate rem
 // ========================================
-
-// maybe?
-// http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
 
 @function rem($target, $context: 16) {
   $strip-target: su($target);

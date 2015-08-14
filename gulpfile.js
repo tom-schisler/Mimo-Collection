@@ -1,6 +1,6 @@
 /*
 
-  Gulpfile v.0.1.0
+  gulpfile
 
 */
 
@@ -10,7 +10,6 @@
 // ========================================
 
 var site = 'C:/Users/mimod/Downloads/build/dist/';
-
 var gulp = require('gulp'),
     sass = require('gulp-ruby-sass'),
     autoprefixer = require('gulp-autoprefixer'),
@@ -31,7 +30,7 @@ gulp.task('sass', function() {
       console.error('Error!', err.message);
     })
     .pipe(autoprefixer({
-      browsers: ['last 12 versions'],
+      browsers: ['last 8 versions'],
       cascade: false
     }))
     .pipe(gulp.dest(site + 'css'));
@@ -43,20 +42,13 @@ gulp.task('sass', function() {
 // Compile JS
 // ========================================
 
-gulp.task('plugins', function() {
-
-  return gulp.src('src/js/plugins/*.js')
-    .pipe(concat('plugins.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest(site + 'js'));
-
-});
-
 gulp.task('script', function() {
 
   return gulp.src('src/js/*.js')
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
+    .pipe(concat('plugins.js'))
+    .pipe(uglify())
     .pipe(gulp.dest(site + 'js'));
 
 });
@@ -70,7 +62,7 @@ gulp.task('images', function() {
 
   return gulp.src('src/images/**/*')
     .pipe(imagemin({
-      optimizationLevel: 5,
+      optimizationLevel: 4,
       progressive: true,
       interlaced: true
     }))
@@ -89,7 +81,6 @@ gulp.task('watch', function() {
   gulp.watch('src/sass/**/*.scss', ['sass']);
 
   // if any js files change(in this folder, [check for errors, compress js])
-  gulp.watch('src/js/plugins/*.js', ['plugins']);
   gulp.watch('src/js/*.js', ['script']);
 
   // if any images change(in this folder, [compress images])
@@ -109,4 +100,4 @@ gulp.task('default', ['watch']);
 // Specific Gulp Tasks
 // ========================================
 
-gulp.task('build', ['sass', 'plugins', 'script', 'images']);
+gulp.task('build', ['sass', 'script', 'images']);

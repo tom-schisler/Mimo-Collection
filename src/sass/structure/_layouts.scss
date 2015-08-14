@@ -1,8 +1,7 @@
 /*
 
   structure/layouts
-    creates a column layout structure,
-    contains styles for generic columns
+    contains styles for generic and specific layout elements
 
 */
 
@@ -11,17 +10,25 @@
 // Header
 // ========================================
 
+header {}
+
 
 // ========================================
 // Main
 // ========================================
+
+main {}
 
 
 // ========================================
 // Aside
 // ========================================
 
+aside {}
+
 
 // ========================================
 // Footer
 // ========================================
+
+footer {}
