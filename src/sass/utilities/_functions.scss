@@ -10,7 +10,7 @@
 // Calculate em
 // ========================================
 
-@function em($target, $context: $body-font-size) {
+@function em($target, $context: $content-size) {
   $strip-target: su($target);
   $strip-context: su($context);
   @return ($strip-target / $strip-context) * 1em;

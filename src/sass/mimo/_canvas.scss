@@ -90,7 +90,7 @@
     top: 50%;
     left: 50%;
     height: em($stripe-height);
-    width: percentage(($stripe-width - $gutter * 2) / $stripe-width);
+    width: percentage(($stripe-width - 40) / $stripe-width);
     content: '';
     background: rgba(#000, .25);
     transform: translate(-50%, -50%);

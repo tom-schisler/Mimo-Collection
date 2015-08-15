@@ -1,6 +1,7 @@
 /*
 
   gulpfile
+    compiles sass, concats+uglifies js, optimizes images
 
 */
 
@@ -9,10 +10,11 @@
 // Include Gulp Plugins
 // ========================================
 
-var site = 'C:/Users/mimod/Downloads/build/dist/';
+var site = 'dist/';
 var gulp = require('gulp'),
     sass = require('gulp-ruby-sass'),
     autoprefixer = require('gulp-autoprefixer'),
+    livereload = require('gulp-livereload'),
     jshint = require('gulp-jshint'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
@@ -25,7 +27,10 @@ var gulp = require('gulp'),
 
 gulp.task('sass', function() {
 
-  return sass('src/sass/')
+  return sass('src/sass/site.scss', {
+      precision: 4,
+      style: 'expanded'
+    })
     .on('error', function (err) {
       console.error('Error!', err.message);
     })
@@ -33,7 +38,8 @@ gulp.task('sass', function() {
       browsers: ['last 8 versions'],
       cascade: false
     }))
-    .pipe(gulp.dest(site + 'css'));
+    .pipe(gulp.dest(site + 'css'))
+    .pipe(livereload());
 
 });
 
@@ -44,12 +50,13 @@ gulp.task('sass', function() {
 
 gulp.task('script', function() {
 
-  return gulp.src('src/js/*.js')
+  return gulp.src('src/js/*')
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
-    .pipe(concat('plugins.js'))
+    .pipe(concat('site.js'))
     .pipe(uglify())
-    .pipe(gulp.dest(site + 'js'));
+    .pipe(gulp.dest(site + 'js'))
+    .pipe(livereload());
 
 });
 
@@ -76,6 +83,9 @@ gulp.task('images', function() {
 // ========================================
 
 gulp.task('watch', function() {
+
+  // setup live reload listener
+  livereload.listen();
 
   // if any sass files change(in this folder, [compile sass])
   gulp.watch('src/sass/**/*.scss', ['sass']);

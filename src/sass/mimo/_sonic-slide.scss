@@ -203,9 +203,9 @@
   text-align: center;
 
   span {
-    height: em($gutter / 2);
-    width: em($gutter / 2);
-    margin: 0 em($gutter / 2);
+    height: em(10);
+    width: em(10);
+    margin: 0 em(5);
     background: rgba(#fff, .25);
 
     &:hover {

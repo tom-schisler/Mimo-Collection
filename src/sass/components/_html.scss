@@ -64,7 +64,7 @@ p {}
 
 table {
   width: 100%;
-  margin-bottom: em($gutter);
+  margin-bottom: em(20);
   border-collapse: collapse;
 }
 
@@ -76,12 +76,13 @@ table {
     }
 
     th {
-      padding: em($gutter);
+      padding: em(20);
       font-weight: normal;
+      text-align: left;
     }
 
     td {
-      padding: em($gutter);
+      padding: em(20);
 
       @at-root tr:nth-of-type(odd) td {
         background-color: rgba(#000, .05);

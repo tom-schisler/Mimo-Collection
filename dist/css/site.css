@@ -1,0 +1,1993 @@
+/*
+
+  manifest
+    gathers all partials,
+    compiles into manifest.css
+
+*/
+/*
+
+  configuration/dynamic
+    stores values, other than typography, that change on a site-by-site basis
+
+*/
+/*
+
+  configuration/static
+    stores values that never change
+
+*/
+/*
+
+  configuration/typography
+    stores values such as heading sizes, font families
+
+*/
+/*
+
+  utilities/common
+    mixins that are frequently used to achieve a common task
+
+*/
+.clear {
+  zoom: 1;
+}
+.clear:after {
+  display: table;
+  clear: both;
+  content: '';
+}
+
+.icon:before {
+  font-family: "mimo";
+  font-weight: normal;
+  content: "";
+  speak: none;
+}
+
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/*
+
+  utilities/functions
+    contains a set of functions for converting values or stripping units
+
+*/
+/*
+
+  utilities/debug
+    visual aids that assist with alignment
+
+*/
+.ruler {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  cursor: move;
+}
+.ruler:before, .ruler:after {
+  position: absolute;
+  content: '';
+  background: deeppink;
+}
+.ruler:before {
+  top: 50%;
+  left: 0;
+  height: 0.25em;
+  width: 100%;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+.ruler:after {
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 0.25em;
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+}
+
+/*
+
+  utilities/unique
+    mixins unique to the site belong here
+
+*/
+/*
+
+  mimo/canvas
+    used for off canvas menus / drawers
+    http://codepen.io/mimoduo/pen/kuobi
+    also known as spectacled langur canvas
+
+*/
+.drawer {
+  position: absolute;
+  min-height: 100%;
+  width: 100%;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translate3d(-20%, 0, 0);
+  transform: translate3d(-20%, 0, 0);
+  -webkit-transform: translate(-20%, 0);
+  -ms-transform: translate(-20%, 0);
+  transform: translate(-20%, 0);
+  top: 3.75em;
+  z-index: 200;
+  max-width: 31.25em;
+  background: #8B8189;
+  -webkit-transition: opacity .4s, visibility .4s, -webkit-transform .4s;
+  transition: opacity .4s, visibility .4s, transform .4s;
+}
+[data-drawer-state="visible"] .drawer {
+  pointer-events: auto;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.drawer-trigger {
+  float: left;
+  height: 3.75em;
+  width: 3.75em;
+}
+.drawer-trigger:before, .drawer-trigger:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 0.125em;
+  width: 33.3333%;
+  content: '';
+  background: rgba(0, 0, 0, 0.25);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: background .4s, -webkit-box-shadow .4s, margin .4s, -webkit-transform .4s;
+  transition: background .4s, box-shadow .4s, margin .4s, transform .4s;
+}
+.drawer-trigger:before {
+  margin-top: -0.25em;
+}
+.drawer-trigger:after {
+  -webkit-box-shadow: 0 0.25em 0 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0.25em 0 0 rgba(0, 0, 0, 0.25);
+}
+[data-drawer-state="visible"] .drawer-trigger:before {
+  margin-top: 0;
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+  -ms-transform: translate(-50%, -50%) rotate(-45deg);
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+[data-drawer-state="visible"] .drawer-trigger:after {
+  -webkit-box-shadow: 0 0 0 0 transparent;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  -ms-transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/*
+
+  mimo/columns
+    creates columns along several custom breakpoints
+    http://codepen.io/mimoduo/pen/zxqEvB
+    also known as caterpillar columns
+
+*/
+/*
+
+  mimo/grid
+    contains a grid system that hooks heavily into html classes
+    http://codepen.io/mimoduo/pen/vOMxLE
+    also known as sycamore tussock moth Grid
+
+*/
+.grid {
+  margin: 0 -1%;
+}
+.grid:after {
+  clear: both;
+  display: table;
+  content: '';
+}
+
+[class^='col'] {
+  float: left;
+  margin: 0 1% 2%;
+  width: 98%;
+}
+
+@media (min-width: 300px) {
+  .col-mini-1 {
+    width: 6.3333%;
+  }
+
+  .col-mini-2 {
+    width: 14.6667%;
+  }
+
+  .col-mini-3 {
+    width: 23%;
+  }
+
+  .col-mini-4 {
+    width: 31.3333%;
+  }
+
+  .col-mini-5 {
+    width: 39.6667%;
+  }
+
+  .col-mini-6 {
+    width: 48%;
+  }
+
+  .col-mini-7 {
+    width: 56.3333%;
+  }
+
+  .col-mini-8 {
+    width: 64.6667%;
+  }
+
+  .col-mini-9 {
+    width: 73%;
+  }
+
+  .col-mini-10 {
+    width: 81.3333%;
+  }
+
+  .col-mini-11 {
+    width: 89.6667%;
+  }
+
+  .col-mini-push-1 {
+    margin-left: 9.3333%;
+  }
+
+  .col-mini-push-2 {
+    margin-left: 17.6667%;
+  }
+
+  .col-mini-push-3 {
+    margin-left: 26%;
+  }
+
+  .col-mini-push-4 {
+    margin-left: 34.3333%;
+  }
+
+  .col-mini-push-5 {
+    margin-left: 42.6667%;
+  }
+
+  .col-mini-push-6 {
+    margin-left: 51%;
+  }
+
+  .col-mini-push-7 {
+    margin-left: 59.3333%;
+  }
+
+  .col-mini-push-8 {
+    margin-left: 67.6667%;
+  }
+
+  .col-mini-push-9 {
+    margin-left: 76%;
+  }
+
+  .col-mini-push-10 {
+    margin-left: 84.3333%;
+  }
+
+  .col-mini-push-11 {
+    margin-left: 92.6667%;
+  }
+}
+@media (min-width: 400px) {
+  .col-tiny-1 {
+    width: 6.3333%;
+  }
+
+  .col-tiny-2 {
+    width: 14.6667%;
+  }
+
+  .col-tiny-3 {
+    width: 23%;
+  }
+
+  .col-tiny-4 {
+    width: 31.3333%;
+  }
+
+  .col-tiny-5 {
+    width: 39.6667%;
+  }
+
+  .col-tiny-6 {
+    width: 48%;
+  }
+
+  .col-tiny-7 {
+    width: 56.3333%;
+  }
+
+  .col-tiny-8 {
+    width: 64.6667%;
+  }
+
+  .col-tiny-9 {
+    width: 73%;
+  }
+
+  .col-tiny-10 {
+    width: 81.3333%;
+  }
+
+  .col-tiny-11 {
+    width: 89.6667%;
+  }
+
+  .col-tiny-push-1 {
+    margin-left: 9.3333%;
+  }
+
+  .col-tiny-push-2 {
+    margin-left: 17.6667%;
+  }
+
+  .col-tiny-push-3 {
+    margin-left: 26%;
+  }
+
+  .col-tiny-push-4 {
+    margin-left: 34.3333%;
+  }
+
+  .col-tiny-push-5 {
+    margin-left: 42.6667%;
+  }
+
+  .col-tiny-push-6 {
+    margin-left: 51%;
+  }
+
+  .col-tiny-push-7 {
+    margin-left: 59.3333%;
+  }
+
+  .col-tiny-push-8 {
+    margin-left: 67.6667%;
+  }
+
+  .col-tiny-push-9 {
+    margin-left: 76%;
+  }
+
+  .col-tiny-push-10 {
+    margin-left: 84.3333%;
+  }
+
+  .col-tiny-push-11 {
+    margin-left: 92.6667%;
+  }
+}
+@media (min-width: 500px) {
+  .col-small-1 {
+    width: 6.3333%;
+  }
+
+  .col-small-2 {
+    width: 14.6667%;
+  }
+
+  .col-small-3 {
+    width: 23%;
+  }
+
+  .col-small-4 {
+    width: 31.3333%;
+  }
+
+  .col-small-5 {
+    width: 39.6667%;
+  }
+
+  .col-small-6 {
+    width: 48%;
+  }
+
+  .col-small-7 {
+    width: 56.3333%;
+  }
+
+  .col-small-8 {
+    width: 64.6667%;
+  }
+
+  .col-small-9 {
+    width: 73%;
+  }
+
+  .col-small-10 {
+    width: 81.3333%;
+  }
+
+  .col-small-11 {
+    width: 89.6667%;
+  }
+
+  .col-small-push-1 {
+    margin-left: 9.3333%;
+  }
+
+  .col-small-push-2 {
+    margin-left: 17.6667%;
+  }
+
+  .col-small-push-3 {
+    margin-left: 26%;
+  }
+
+  .col-small-push-4 {
+    margin-left: 34.3333%;
+  }
+
+  .col-small-push-5 {
+    margin-left: 42.6667%;
+  }
+
+  .col-small-push-6 {
+    margin-left: 51%;
+  }
+
+  .col-small-push-7 {
+    margin-left: 59.3333%;
+  }
+
+  .col-small-push-8 {
+    margin-left: 67.6667%;
+  }
+
+  .col-small-push-9 {
+    margin-left: 76%;
+  }
+
+  .col-small-push-10 {
+    margin-left: 84.3333%;
+  }
+
+  .col-small-push-11 {
+    margin-left: 92.6667%;
+  }
+}
+@media (min-width: 600px) {
+  .col-medium-1 {
+    width: 6.3333%;
+  }
+
+  .col-medium-2 {
+    width: 14.6667%;
+  }
+
+  .col-medium-3 {
+    width: 23%;
+  }
+
+  .col-medium-4 {
+    width: 31.3333%;
+  }
+
+  .col-medium-5 {
+    width: 39.6667%;
+  }
+
+  .col-medium-6 {
+    width: 48%;
+  }
+
+  .col-medium-7 {
+    width: 56.3333%;
+  }
+
+  .col-medium-8 {
+    width: 64.6667%;
+  }
+
+  .col-medium-9 {
+    width: 73%;
+  }
+
+  .col-medium-10 {
+    width: 81.3333%;
+  }
+
+  .col-medium-11 {
+    width: 89.6667%;
+  }
+
+  .col-medium-push-1 {
+    margin-left: 9.3333%;
+  }
+
+  .col-medium-push-2 {
+    margin-left: 17.6667%;
+  }
+
+  .col-medium-push-3 {
+    margin-left: 26%;
+  }
+
+  .col-medium-push-4 {
+    margin-left: 34.3333%;
+  }
+
+  .col-medium-push-5 {
+    margin-left: 42.6667%;
+  }
+
+  .col-medium-push-6 {
+    margin-left: 51%;
+  }
+
+  .col-medium-push-7 {
+    margin-left: 59.3333%;
+  }
+
+  .col-medium-push-8 {
+    margin-left: 67.6667%;
+  }
+
+  .col-medium-push-9 {
+    margin-left: 76%;
+  }
+
+  .col-medium-push-10 {
+    margin-left: 84.3333%;
+  }
+
+  .col-medium-push-11 {
+    margin-left: 92.6667%;
+  }
+}
+@media (min-width: 700px) {
+  .col-big-1 {
+    width: 6.3333%;
+  }
+
+  .col-big-2 {
+    width: 14.6667%;
+  }
+
+  .col-big-3 {
+    width: 23%;
+  }
+
+  .col-big-4 {
+    width: 31.3333%;
+  }
+
+  .col-big-5 {
+    width: 39.6667%;
+  }
+
+  .col-big-6 {
+    width: 48%;
+  }
+
+  .col-big-7 {
+    width: 56.3333%;
+  }
+
+  .col-big-8 {
+    width: 64.6667%;
+  }
+
+  .col-big-9 {
+    width: 73%;
+  }
+
+  .col-big-10 {
+    width: 81.3333%;
+  }
+
+  .col-big-11 {
+    width: 89.6667%;
+  }
+
+  .col-big-push-1 {
+    margin-left: 9.3333%;
+  }
+
+  .col-big-push-2 {
+    margin-left: 17.6667%;
+  }
+
+  .col-big-push-3 {
+    margin-left: 26%;
+  }
+
+  .col-big-push-4 {
+    margin-left: 34.3333%;
+  }
+
+  .col-big-push-5 {
+    margin-left: 42.6667%;
+  }
+
+  .col-big-push-6 {
+    margin-left: 51%;
+  }
+
+  .col-big-push-7 {
+    margin-left: 59.3333%;
+  }
+
+  .col-big-push-8 {
+    margin-left: 67.6667%;
+  }
+
+  .col-big-push-9 {
+    margin-left: 76%;
+  }
+
+  .col-big-push-10 {
+    margin-left: 84.3333%;
+  }
+
+  .col-big-push-11 {
+    margin-left: 92.6667%;
+  }
+}
+@media (min-width: 800px) {
+  .col-large-1 {
+    width: 6.3333%;
+  }
+
+  .col-large-2 {
+    width: 14.6667%;
+  }
+
+  .col-large-3 {
+    width: 23%;
+  }
+
+  .col-large-4 {
+    width: 31.3333%;
+  }
+
+  .col-large-5 {
+    width: 39.6667%;
+  }
+
+  .col-large-6 {
+    width: 48%;
+  }
+
+  .col-large-7 {
+    width: 56.3333%;
+  }
+
+  .col-large-8 {
+    width: 64.6667%;
+  }
+
+  .col-large-9 {
+    width: 73%;
+  }
+
+  .col-large-10 {
+    width: 81.3333%;
+  }
+
+  .col-large-11 {
+    width: 89.6667%;
+  }
+
+  .col-large-push-1 {
+    margin-left: 9.3333%;
+  }
+
+  .col-large-push-2 {
+    margin-left: 17.6667%;
+  }
+
+  .col-large-push-3 {
+    margin-left: 26%;
+  }
+
+  .col-large-push-4 {
+    margin-left: 34.3333%;
+  }
+
+  .col-large-push-5 {
+    margin-left: 42.6667%;
+  }
+
+  .col-large-push-6 {
+    margin-left: 51%;
+  }
+
+  .col-large-push-7 {
+    margin-left: 59.3333%;
+  }
+
+  .col-large-push-8 {
+    margin-left: 67.6667%;
+  }
+
+  .col-large-push-9 {
+    margin-left: 76%;
+  }
+
+  .col-large-push-10 {
+    margin-left: 84.3333%;
+  }
+
+  .col-large-push-11 {
+    margin-left: 92.6667%;
+  }
+}
+@media (min-width: 900px) {
+  .col-huge-1 {
+    width: 6.3333%;
+  }
+
+  .col-huge-2 {
+    width: 14.6667%;
+  }
+
+  .col-huge-3 {
+    width: 23%;
+  }
+
+  .col-huge-4 {
+    width: 31.3333%;
+  }
+
+  .col-huge-5 {
+    width: 39.6667%;
+  }
+
+  .col-huge-6 {
+    width: 48%;
+  }
+
+  .col-huge-7 {
+    width: 56.3333%;
+  }
+
+  .col-huge-8 {
+    width: 64.6667%;
+  }
+
+  .col-huge-9 {
+    width: 73%;
+  }
+
+  .col-huge-10 {
+    width: 81.3333%;
+  }
+
+  .col-huge-11 {
+    width: 89.6667%;
+  }
+
+  .col-huge-push-1 {
+    margin-left: 9.3333%;
+  }
+
+  .col-huge-push-2 {
+    margin-left: 17.6667%;
+  }
+
+  .col-huge-push-3 {
+    margin-left: 26%;
+  }
+
+  .col-huge-push-4 {
+    margin-left: 34.3333%;
+  }
+
+  .col-huge-push-5 {
+    margin-left: 42.6667%;
+  }
+
+  .col-huge-push-6 {
+    margin-left: 51%;
+  }
+
+  .col-huge-push-7 {
+    margin-left: 59.3333%;
+  }
+
+  .col-huge-push-8 {
+    margin-left: 67.6667%;
+  }
+
+  .col-huge-push-9 {
+    margin-left: 76%;
+  }
+
+  .col-huge-push-10 {
+    margin-left: 84.3333%;
+  }
+
+  .col-huge-push-11 {
+    margin-left: 92.6667%;
+  }
+}
+@media (min-width: 1000px) {
+  .col-nation-1 {
+    width: 6.3333%;
+  }
+
+  .col-nation-2 {
+    width: 14.6667%;
+  }
+
+  .col-nation-3 {
+    width: 23%;
+  }
+
+  .col-nation-4 {
+    width: 31.3333%;
+  }
+
+  .col-nation-5 {
+    width: 39.6667%;
+  }
+
+  .col-nation-6 {
+    width: 48%;
+  }
+
+  .col-nation-7 {
+    width: 56.3333%;
+  }
+
+  .col-nation-8 {
+    width: 64.6667%;
+  }
+
+  .col-nation-9 {
+    width: 73%;
+  }
+
+  .col-nation-10 {
+    width: 81.3333%;
+  }
+
+  .col-nation-11 {
+    width: 89.6667%;
+  }
+
+  .col-nation-push-1 {
+    margin-left: 9.3333%;
+  }
+
+  .col-nation-push-2 {
+    margin-left: 17.6667%;
+  }
+
+  .col-nation-push-3 {
+    margin-left: 26%;
+  }
+
+  .col-nation-push-4 {
+    margin-left: 34.3333%;
+  }
+
+  .col-nation-push-5 {
+    margin-left: 42.6667%;
+  }
+
+  .col-nation-push-6 {
+    margin-left: 51%;
+  }
+
+  .col-nation-push-7 {
+    margin-left: 59.3333%;
+  }
+
+  .col-nation-push-8 {
+    margin-left: 67.6667%;
+  }
+
+  .col-nation-push-9 {
+    margin-left: 76%;
+  }
+
+  .col-nation-push-10 {
+    margin-left: 84.3333%;
+  }
+
+  .col-nation-push-11 {
+    margin-left: 92.6667%;
+  }
+}
+@media (min-width: 1100px) {
+  .col-world-1 {
+    width: 6.3333%;
+  }
+
+  .col-world-2 {
+    width: 14.6667%;
+  }
+
+  .col-world-3 {
+    width: 23%;
+  }
+
+  .col-world-4 {
+    width: 31.3333%;
+  }
+
+  .col-world-5 {
+    width: 39.6667%;
+  }
+
+  .col-world-6 {
+    width: 48%;
+  }
+
+  .col-world-7 {
+    width: 56.3333%;
+  }
+
+  .col-world-8 {
+    width: 64.6667%;
+  }
+
+  .col-world-9 {
+    width: 73%;
+  }
+
+  .col-world-10 {
+    width: 81.3333%;
+  }
+
+  .col-world-11 {
+    width: 89.6667%;
+  }
+
+  .col-world-push-1 {
+    margin-left: 9.3333%;
+  }
+
+  .col-world-push-2 {
+    margin-left: 17.6667%;
+  }
+
+  .col-world-push-3 {
+    margin-left: 26%;
+  }
+
+  .col-world-push-4 {
+    margin-left: 34.3333%;
+  }
+
+  .col-world-push-5 {
+    margin-left: 42.6667%;
+  }
+
+  .col-world-push-6 {
+    margin-left: 51%;
+  }
+
+  .col-world-push-7 {
+    margin-left: 59.3333%;
+  }
+
+  .col-world-push-8 {
+    margin-left: 67.6667%;
+  }
+
+  .col-world-push-9 {
+    margin-left: 76%;
+  }
+
+  .col-world-push-10 {
+    margin-left: 84.3333%;
+  }
+
+  .col-world-push-11 {
+    margin-left: 92.6667%;
+  }
+}
+@media (min-width: 1200px) {
+  .col-galaxy-1 {
+    width: 6.3333%;
+  }
+
+  .col-galaxy-2 {
+    width: 14.6667%;
+  }
+
+  .col-galaxy-3 {
+    width: 23%;
+  }
+
+  .col-galaxy-4 {
+    width: 31.3333%;
+  }
+
+  .col-galaxy-5 {
+    width: 39.6667%;
+  }
+
+  .col-galaxy-6 {
+    width: 48%;
+  }
+
+  .col-galaxy-7 {
+    width: 56.3333%;
+  }
+
+  .col-galaxy-8 {
+    width: 64.6667%;
+  }
+
+  .col-galaxy-9 {
+    width: 73%;
+  }
+
+  .col-galaxy-10 {
+    width: 81.3333%;
+  }
+
+  .col-galaxy-11 {
+    width: 89.6667%;
+  }
+
+  .col-galaxy-push-1 {
+    margin-left: 9.3333%;
+  }
+
+  .col-galaxy-push-2 {
+    margin-left: 17.6667%;
+  }
+
+  .col-galaxy-push-3 {
+    margin-left: 26%;
+  }
+
+  .col-galaxy-push-4 {
+    margin-left: 34.3333%;
+  }
+
+  .col-galaxy-push-5 {
+    margin-left: 42.6667%;
+  }
+
+  .col-galaxy-push-6 {
+    margin-left: 51%;
+  }
+
+  .col-galaxy-push-7 {
+    margin-left: 59.3333%;
+  }
+
+  .col-galaxy-push-8 {
+    margin-left: 67.6667%;
+  }
+
+  .col-galaxy-push-9 {
+    margin-left: 76%;
+  }
+
+  .col-galaxy-push-10 {
+    margin-left: 84.3333%;
+  }
+
+  .col-galaxy-push-11 {
+    margin-left: 92.6667%;
+  }
+}
+@media (min-width: 1300px) {
+  .col-universe-1 {
+    width: 6.3333%;
+  }
+
+  .col-universe-2 {
+    width: 14.6667%;
+  }
+
+  .col-universe-3 {
+    width: 23%;
+  }
+
+  .col-universe-4 {
+    width: 31.3333%;
+  }
+
+  .col-universe-5 {
+    width: 39.6667%;
+  }
+
+  .col-universe-6 {
+    width: 48%;
+  }
+
+  .col-universe-7 {
+    width: 56.3333%;
+  }
+
+  .col-universe-8 {
+    width: 64.6667%;
+  }
+
+  .col-universe-9 {
+    width: 73%;
+  }
+
+  .col-universe-10 {
+    width: 81.3333%;
+  }
+
+  .col-universe-11 {
+    width: 89.6667%;
+  }
+
+  .col-universe-push-1 {
+    margin-left: 9.3333%;
+  }
+
+  .col-universe-push-2 {
+    margin-left: 17.6667%;
+  }
+
+  .col-universe-push-3 {
+    margin-left: 26%;
+  }
+
+  .col-universe-push-4 {
+    margin-left: 34.3333%;
+  }
+
+  .col-universe-push-5 {
+    margin-left: 42.6667%;
+  }
+
+  .col-universe-push-6 {
+    margin-left: 51%;
+  }
+
+  .col-universe-push-7 {
+    margin-left: 59.3333%;
+  }
+
+  .col-universe-push-8 {
+    margin-left: 67.6667%;
+  }
+
+  .col-universe-push-9 {
+    margin-left: 76%;
+  }
+
+  .col-universe-push-10 {
+    margin-left: 84.3333%;
+  }
+
+  .col-universe-push-11 {
+    margin-left: 92.6667%;
+  }
+}
+@media (min-width: 1400px) {
+  .col-penguindrum-1 {
+    width: 6.3333%;
+  }
+
+  .col-penguindrum-2 {
+    width: 14.6667%;
+  }
+
+  .col-penguindrum-3 {
+    width: 23%;
+  }
+
+  .col-penguindrum-4 {
+    width: 31.3333%;
+  }
+
+  .col-penguindrum-5 {
+    width: 39.6667%;
+  }
+
+  .col-penguindrum-6 {
+    width: 48%;
+  }
+
+  .col-penguindrum-7 {
+    width: 56.3333%;
+  }
+
+  .col-penguindrum-8 {
+    width: 64.6667%;
+  }
+
+  .col-penguindrum-9 {
+    width: 73%;
+  }
+
+  .col-penguindrum-10 {
+    width: 81.3333%;
+  }
+
+  .col-penguindrum-11 {
+    width: 89.6667%;
+  }
+
+  .col-penguindrum-push-1 {
+    margin-left: 9.3333%;
+  }
+
+  .col-penguindrum-push-2 {
+    margin-left: 17.6667%;
+  }
+
+  .col-penguindrum-push-3 {
+    margin-left: 26%;
+  }
+
+  .col-penguindrum-push-4 {
+    margin-left: 34.3333%;
+  }
+
+  .col-penguindrum-push-5 {
+    margin-left: 42.6667%;
+  }
+
+  .col-penguindrum-push-6 {
+    margin-left: 51%;
+  }
+
+  .col-penguindrum-push-7 {
+    margin-left: 59.3333%;
+  }
+
+  .col-penguindrum-push-8 {
+    margin-left: 67.6667%;
+  }
+
+  .col-penguindrum-push-9 {
+    margin-left: 76%;
+  }
+
+  .col-penguindrum-push-10 {
+    margin-left: 84.3333%;
+  }
+
+  .col-penguindrum-push-11 {
+    margin-left: 92.6667%;
+  }
+}
+/*
+
+  mimo/collage
+    creates a collage of elements
+    http://codepen.io/mimoduo/pen/VYwamv
+    also known as nudibranch collage
+
+*/
+/*
+
+  mimo/canvas
+    contains the sonic slide setup and defaults
+
+*/
+.slideshow {
+  max-width: 100%;
+  margin: 0 auto;
+  padding-left: 0;
+  list-style: none;
+}
+
+.slide-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  -webkit-transition: opacity 0.3s, visibility 0.3s, -webkit-transform 0.3s;
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+  -webkit-transform: translate(-100%, 0);
+  -ms-transform: translate(-100%, 0);
+  transform: translate(-100%, 0);
+}
+.slide-item.active ~ * {
+  -webkit-transform: translate(200%, 0);
+  -ms-transform: translate(200%, 0);
+  transform: translate(200%, 0);
+}
+.slide-item.active + * {
+  -webkit-transform: translate(100%, 0);
+  -ms-transform: translate(100%, 0);
+  transform: translate(100%, 0);
+}
+.slide-item.active {
+  position: relative;
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.controls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 200;
+  height: 100%;
+  text-align: center;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.control {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  cursor: pointer;
+  pointer-events: auto;
+  visibility: visible;
+}
+.control:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  top: 50%;
+  font-family: 'FontAwesome';
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+
+.prev {
+  left: 0;
+}
+.prev:before {
+  content: '\f104';
+}
+
+.next {
+  right: 0;
+}
+.next:before {
+  content: '\f105';
+}
+
+.control {
+  width: 15%;
+  font-size: 3.5em;
+}
+
+.pagination {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 200;
+  text-align: center;
+}
+.pagination span {
+  display: inline-block;
+  cursor: pointer;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+}
+.pagination span.active {
+  pointer-events: none;
+}
+
+.pagination {
+  text-align: center;
+}
+.pagination span {
+  height: 0.625em;
+  width: 0.625em;
+  margin: 0 0.3125em;
+  background: rgba(255, 255, 255, 0.25);
+}
+.pagination span:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+.pagination span.active {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0;
+}
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+ */
+[hidden],
+template {
+  display: none;
+}
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+img {
+  border: 0;
+}
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+figure {
+  margin: 1em 2.5em;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+/**
+ * Contain overflow in all browsers.
+ */
+pre {
+  overflow: auto;
+}
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+}
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+button {
+  overflow: visible;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+input {
+  line-height: normal;
+}
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+optgroup {
+  font-weight: bold;
+}
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+/*
+
+  structure/root
+    restructures every element,
+    contains styles for html & body
+
+*/
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+body {
+  font-size: 1em;
+  line-height: 1.375;
+}
+
+/*
+
+  structure/layouts
+    contains styles for generic and specific layout elements
+
+*/
+/*
+
+  components/type
+    contains heading properties that are custom and from the configuration file
+*/
+h1,
+.h1, h2,
+.h2, h3,
+.h3, h4,
+.h4, h5,
+.h5, h6,
+.h6 {
+  font-weight: normal;
+}
+
+h1,
+.h1 {
+  font-size: 2.5em;
+}
+
+h2,
+.h2 {
+  font-size: 2.1875em;
+}
+
+h3,
+.h3 {
+  font-size: 1.875em;
+}
+
+h4,
+.h4 {
+  font-size: 1.5625em;
+}
+
+h5,
+.h5 {
+  font-size: 1.25em;
+}
+
+h6,
+.h6 {
+  font-size: 1em;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.oblique {
+  font-style: oblique;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.medium {
+  font-size: 500;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+/*
+
+  components/html
+    styles for html elements that grab attention or organize data
+
+*/
+blockquote:before {
+  content: '\201C';
+}
+blockquote:after {
+  content: '\201D';
+}
+
+cite {
+  font-style: normal;
+}
+
+table {
+  width: 100%;
+  margin-bottom: 1.25em;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  vertical-align: top;
+}
+
+th {
+  padding: 1.25em;
+  font-weight: normal;
+  text-align: left;
+}
+
+td {
+  padding: 1.25em;
+}
+tr:nth-of-type(odd) td {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/*
+
+  components/buttons
+    contains generic & unique buttons/triggers
+    allows extension of generic buttons
+
+*/
+.button {
+  display: inline-block;
+  text-align: center;
+}
+
+.button {
+  background: #eee;
+  border-color: #eee;
+}
+.button:hover {
+  background: #e1e1e1;
+}
+
+.site-logo {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+  background: url("/dist/images/logo.svg") no-repeat 0 0;
+  background-size: contain;
+  color: transparent;
+}
+.site-logo:hover {
+  color: transparent;
+}
+
+/*
+
+  components/forms
+    all form elements except button
+
+*/

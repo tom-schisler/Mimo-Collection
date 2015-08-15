@@ -19,6 +19,11 @@ $font-dir: $layout-dir + 'fonts/';
 // Column Setup
 // ========================================
 
+// http://codepen.io/mimoduo/pen/vOMxLE
+
+// Max width of overall site content
+$column-boundary: 1000;
+
 // Number of columns the grid is based off of
 $column-base: 12;
 
@@ -30,7 +35,7 @@ $column-between: 1%;
 $column-push-desired: true;
 
 // Do you need to utilize the pull feature of this grid system?
-$column-pull-desired: true;
+$column-pull-desired: false;
 
 
 // ========================================
@@ -49,13 +54,4 @@ $drawer-disappears: 600;
 // Brand Colors
 // ========================================
 
-// http://coolors.co/
-
-$diamond: #222;
-$electric: #333;
-
-$dynamite: #444;
-$emerald: #555;
-
-$sun: rgba(#fff, .1);
-$moon: rgba(#000, .1);
+// http://codepen.io/mimoduo/pen/ZGZPjy

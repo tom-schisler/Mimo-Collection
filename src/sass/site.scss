@@ -63,7 +63,6 @@
 
 @import
  'structure/root.scss',
- 'structure/sections.scss',
  'structure/layouts.scss';
 
 
@@ -73,7 +72,7 @@
 // ========================================
 
 @import
- 'structure/type.scss',
- 'structure/html.scss',
- 'structure/buttons.scss',
- 'structure/forms.scss';
+ 'components/type.scss',
+ 'components/html.scss',
+ 'components/buttons.scss',
+ 'components/forms.scss';

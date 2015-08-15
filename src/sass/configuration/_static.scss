@@ -23,8 +23,8 @@ $galaxy: 1200;
 $universe: 1300;
 $penguindrum: 1400;
 
-$boundary: $site-boundry;
-$boundary-plus: $site-boundry + $gutter * 2;
+$boundary: $column-boundary;
+$boundary-plus: $column-boundary + 40;
 
 // Create a multidimensial array to store breakpoint aliases & respective values
 $breakpoints: (
