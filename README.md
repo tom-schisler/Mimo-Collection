@@ -5,8 +5,8 @@ A mini barebones framework for developers who want to make their own jam.
 
 ##Features
 
-* SASS as a pre-processer
-* Gulp as a task runner
+* SASS as a pre-processer - http://sass-lang.com/
+* Gulp as a task runner - http://gulpjs.com/
 * Vanilla js starter file
 * Semantic html template
 
