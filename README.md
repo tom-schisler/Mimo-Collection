@@ -47,3 +47,8 @@ Whoa, hold the phone. You want me to install all this @)(&$(&*!%)) you cray-g. W
   * In your terminal, cd into the mimo-collection directory
   * Windows users: npm install
   * OSX users: sudo npm install
+
+
+##Final Notes
+
+This framework wouldn't be possible without all the help of my friends. They've contributed to every single aspect of this without knowing it ^w^
