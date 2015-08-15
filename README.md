@@ -19,6 +19,7 @@ A mini barebones framework for developers who want to make their own jam.
 * Quick start collage - http://codepen.io/mimoduo/pen/VYwamv
 * Miniature slideshow - http://codepen.io/mimoduo/pen/IkatC
 
+
 ###SASS Features Not Included
 
 * Hint positioning system - http://codepen.io/mimoduo/pen/vhlEj
