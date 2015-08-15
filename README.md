@@ -23,9 +23,16 @@ A mini barebones framework for developers who want to make their own jam.
 ###Gulp Features
 
 * SASS compilation with autoprefixer
+  * https://www.npmjs.com/package/gulp-ruby-sass
+  * https://www.npmjs.com/package/gulp-autoprefixer
 * JS reporter/hinting, concatenation, uglification
+  * https://www.npmjs.com/package/gulp-jshint
+  * https://www.npmjs.com/package/gulp-concat
+  * https://www.npmjs.com/package/gulp-uglify
 * Image optimization
+  * https://www.npmjs.com/package/gulp-imagemin
 * Livereload
+  * https://www.npmjs.com/package/gulp-livereload
 
 
 ##Setup
