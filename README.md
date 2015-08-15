@@ -34,8 +34,7 @@ Whoa, hold the phone. You want me to install all this @)(&$(&*!%)) you cray-g. W
 
 * Ruby! BAM! You need that to compile SASS.
 * SASS! BOOM! You need SASS FO SASS.
-* Node! POW! You need node to install gulpfile packages.
-* Node modules! PAPOW! You need node modules to run gulpfile tasks.
+* Node && Node Modules! POW! You need these to run gulp tasks.
 
 1. Install ruby (if ruby is not natively installed on your machine: windows homies hollaaa)
   * http://rubyinstaller.org/
