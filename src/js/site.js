@@ -1,5 +1,5 @@
 function site() {
 
-  console.log('this');
+  console.log('mimo is running away!');
 
 }

@@ -11,11 +11,13 @@
 // Generic Buttons
 // ========================================
 
+// Defines generic button behavior
 %button {
   display: inline-block;
   text-align: center;
 }
 
+// Defines button specific behavior
 @mixin button($color) {
   background: $color;
   border-color: $color;
@@ -41,7 +43,7 @@ button {}
 
 
 // ========================================
-// Site Logo
+// Site Logo Anchor
 // ========================================
 
 .site-logo {

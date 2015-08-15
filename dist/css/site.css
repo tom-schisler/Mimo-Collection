@@ -1917,6 +1917,9 @@ h6,
     styles for html elements that grab attention or organize data
 
 */
+blockquote {
+  margin: 1.25em;
+}
 blockquote:before {
   content: '\201C';
 }
@@ -1928,10 +1931,19 @@ cite {
   font-style: normal;
 }
 
+ul,
+ol {
+  margin: 1.25em 0;
+}
+
+p {
+  margin: 1.25em 0;
+}
+
 table {
   width: 100%;
-  margin-bottom: 1.25em;
   border-collapse: collapse;
+  margin: 1.25em 0;
 }
 
 th,
@@ -1991,3 +2003,7 @@ tr:nth-of-type(odd) td {
     all form elements except button
 
 */
+fieldset {
+  border: 0;
+  padding: 0;
+}

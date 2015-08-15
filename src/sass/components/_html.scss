@@ -24,6 +24,7 @@ a {
 // ========================================
 
 blockquote {
+  margin: em(20);
 
   &:before {
     content: '\201C';
@@ -40,6 +41,9 @@ blockquote {
 
 cite {
   font-style: normal;
+
+  &:before {}
+
 }
 
 
@@ -48,14 +52,18 @@ cite {
 // ========================================
 
 ul,
-ol {}
+ol {
+  margin: em(20) 0;
+}
 
 
 // ========================================
 // Paragraphs
 // ========================================
 
-p {}
+p {
+  margin: em(20) 0;
+}
 
 
 // ========================================
@@ -64,8 +72,8 @@ p {}
 
 table {
   width: 100%;
-  margin-bottom: em(20);
   border-collapse: collapse;
+  margin: em(20) 0;
 }
 
   tr {}

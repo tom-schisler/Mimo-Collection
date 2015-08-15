@@ -1,1 +1,1 @@
-function site(){console.log("this")}
+function site(){console.log("mimo is running away!")}
