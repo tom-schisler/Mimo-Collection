@@ -31,7 +31,7 @@ A mini barebones framework for developers who want to make their own jam.
   * https://www.npmjs.com/package/gulp-uglify
 * Image optimization
   * https://www.npmjs.com/package/gulp-imagemin
-* Livereload
+* Livereload for SASS and JS
   * https://www.npmjs.com/package/gulp-livereload
 
 
