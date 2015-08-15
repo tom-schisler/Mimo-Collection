@@ -24,7 +24,6 @@ A mini barebones framework for developers who want to make their own jam.
 
 * Hint positioning system - http://codepen.io/mimoduo/pen/vhlEj
 * Item alignment system - http://codepen.io/mimoduo/pen/pvRZKo
-* Default for items pivoting around the window - http://codepen.io/mimoduo/pen/AsEKL
 
 
 ###Gulp Features
