@@ -1,4 +1,4 @@
-#Mimo Collection
+#Mimo Collection *//.
 
 A mini barebones framework for developers who want to make their own jam.
 
