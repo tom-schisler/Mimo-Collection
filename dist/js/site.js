@@ -1,1 +1,1 @@
-function site(){console.log("mimo is running away!")}
+function site(){console.log("mimo is running away!"),window.addEventListener("keydown",debug,!1)}function debug(d){71==d.keyCode?document.body.classList.contains("debug-grid")?document.body.classList.remove("debug-grid"):document.body.classList.add("debug-grid"):82==d.keyCode&&(document.body.classList.contains("debug-ruler")?document.body.classList.remove("debug-ruler"):document.body.classList.add("debug-ruler"))}site();

@@ -71,7 +71,11 @@
   left: 0;
   height: 100%;
   width: 100%;
+  display: none;
   cursor: move;
+}
+.debug-ruler .ruler {
+  display: block;
 }
 .ruler:before, .ruler:after {
   position: absolute;

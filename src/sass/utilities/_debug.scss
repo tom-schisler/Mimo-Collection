@@ -12,7 +12,12 @@
 
 .ruler {
   @include cover;
+  display: none;
   cursor: move;
+
+  .debug-ruler & {
+    display: block;
+  }
 
   &:before,
   &:after {
