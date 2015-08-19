@@ -43,7 +43,7 @@ A mini barebones framework for developers who want to make their own jam.
 
 ##Setup
 
-Whoa, hold the phone. You want me to install all this @)(&$(&*!%)) you cray-g. Well, to make you feel better about the universe as a fuzzy moth, I'll go over why you need each one. ! BAM! You need that to compile SASS. SASS! BOOM! You need SASS FO SASS. Node && Node Modules! POW! You need these to run gulp tasks.
+Whoa, hold the phone. You want me to install all this @)(&$(&*!%)) you cray-g. Well, to make you feel better about the universe as a fuzzy moth, I'll go over why you need each one. Ruby! BAM! You need that to compile SASS. SASS! BOOM! You need SASS FO SASS. Node && Node Modules! POW! You need these to run gulp tasks.
 
 1. Install ruby (if ruby is not natively installed on your machine: windows homies hollaaa)
   * http://rubyinstaller.org/
