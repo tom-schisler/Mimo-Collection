@@ -11,14 +11,14 @@
 // Generic Buttons
 // ========================================
 
-// Defines generic button behavior
+// Common styles for all buttons
 %button {
   display: inline-block;
   text-align: center;
   cursor: pointer;
 }
 
-// Defines button specific behavior
+// Defines button specific behavior and respective states of interactivity
 @mixin button($color) {
   background: $color;
   border-color: $color;
@@ -26,6 +26,8 @@
   &:hover {
     background: darken($color, 5%);
   }
+
+  &:active {}
 
 }
 
@@ -47,6 +49,8 @@ button {}
 // Site Logo Anchor
 // ========================================
 
+// Use the max-width of your logo
+// Consider increasing the font-size or adding padding to enlarge the logo
 .site-logo {
   display: block;
   overflow: hidden;

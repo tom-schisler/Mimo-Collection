@@ -26,10 +26,12 @@ a {
 blockquote {
   margin: em(20);
 
+  // Unicode for an open quote
   &:before {
     content: '\201C';
   }
 
+  // Unicode for a closed quote
   &:after {
     content: '\201D';
   }

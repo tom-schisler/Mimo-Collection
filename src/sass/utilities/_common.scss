@@ -10,6 +10,11 @@
 // Media
 // ========================================
 
+// Example usage:
+// .element {
+//   @include media('small') {}
+// }
+
 @mixin media($breakpoint, $adapt: false) {
 
   // $adapt: true
@@ -90,6 +95,11 @@
 // ========================================
 // Cover
 // ========================================
+
+// Example usage:
+// .overlay {
+//   @include cover;
+// }
 
 @mixin cover {
   position: absolute;
