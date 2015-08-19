@@ -15,6 +15,7 @@
 %button {
   display: inline-block;
   text-align: center;
+  cursor: pointer;
 }
 
 // Defines button specific behavior
@@ -28,11 +29,6 @@
 
 }
 
-// HTML Button
-// ----------------------------------------
-
-button {}
-
 // Extended Button
 // ----------------------------------------
 
@@ -40,6 +36,11 @@ button {}
   @extend %button;
   @include button(#eee);
 }
+
+// HTML Button
+// ----------------------------------------
+
+button {}
 
 
 // ========================================
@@ -49,6 +50,7 @@ button {}
 .site-logo {
   display: block;
   overflow: hidden;
+  max-width: em(200);
   width: 100%;
   white-space: nowrap;
   background: url($image-dir + 'logo.svg') no-repeat 0 0;

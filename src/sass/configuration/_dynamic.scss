@@ -10,6 +10,8 @@
 // Asset Paths
 // ========================================
 
+// The path where compiled / exported files reside
+
 $layout-dir: '/dist/';
 $image-dir: $layout-dir + 'images/';
 $font-dir: $layout-dir + 'fonts/';
@@ -43,10 +45,13 @@ $column-pull-desired: false;
 // ========================================
 
 // http://github.com/nhall
-// Totally got this idea from Nick Hall
+// This is one of Nick Hall's ideas
 // These occur when items in relation to each other change at the same point
 
+// When will content be at a comfortable time to breath in a two column layout?
 $create-columns: 600;
+
+// When does the off-canvas / drawer disappear?
 $drawer-disappears: 600;
 
 

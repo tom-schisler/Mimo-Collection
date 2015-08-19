@@ -10,6 +10,9 @@
 // Breakpoints
 // ========================================
 
+// Declare breakpoints on a variable by variable basis
+// Used to increase performance of the @media mixin
+
 $mini: 300;
 $tiny: 400;
 $small: 500;
@@ -23,10 +26,9 @@ $galaxy: 1200;
 $universe: 1300;
 $penguindrum: 1400;
 
-$boundary: $column-boundary;
-$boundary-plus: $column-boundary + 40;
-
 // Create a multidimensial array to store breakpoint aliases & respective values
+// Used to assign classes to the grid system within mimo/_grid.scss
+
 $breakpoints: (
   ('mini', 300px),
   ('tiny', 400px),

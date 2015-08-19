@@ -1,14 +1,14 @@
 #Mimo Collection *//.
 
-A mini barebones framework for developers who want to make their own jam.
+The primary intention of the Mimo Collection is to provide a skeleton framework for developers of any skill level to use as a simple start to any project.
 
 
 ##Features
 
 * SASS as a pre-processer - http://sass-lang.com/
 * Gulp as a task runner - http://gulpjs.com/
-* Vanilla js starter file
-* Semantic html template
+* Vanilla JS starter file
+* Semantic HTML template
 
 
 ###SASS Features
@@ -59,4 +59,4 @@ Whoa, hold the phone. You want me to install all this @)(&$(&*!%)) you cray-g. W
 
 ##Final Notes
 
-This framework wouldn't be possible without all the help of my friends. They've contributed to every single aspect of this without knowing it ^w^
+This framework wouldn't be possible without all the help of my friends. They've contributed to every single aspect of this without knowing it ^w^ Most notably Nick Hall: For being the best mentor in the world! - https://github.com/nhall
