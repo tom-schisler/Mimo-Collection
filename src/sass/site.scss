@@ -8,6 +8,45 @@
 
 
 // ========================================
+// Table of Contents
+// ========================================
+
+// !: Ordered by @import sequence
+
+// Configuration
+//   dynamic - variables for paths, columns, flexpoint, colors
+//   static - contains non-changing variables independent of any site
+//   typography - variables for font families, common type, heading sizes
+
+// Utilities
+//   common - contains frequently used mixins: @media, clearfix, icon, cover
+//   debug - contains tools used to debug the visual layout of the page
+//   functions - contains functions for calculating ems and rems
+//   unique - blank template for mixins dependent on the site
+
+// Mimo
+//   canvas - contains mixin and default of off-canvas / drawer navigation
+//   columns - contains mixin for rapidly generating unique columns
+//   grid - contains the grid system dependent on breakpoints
+//   nudibranch - contains a mixin for creating collage style layouts
+//   sonic-slide - contains a mixin for slideshows, !: includes js dependency
+
+// Vendor
+//   normalize - neutralize the web universe first!
+
+// Structure
+//   layouts - blank selector template for header, main, aside, and footer
+//   root - sets global properties and properties for html, body
+
+// Components
+//   buttons - contains general button styles and unique button styles
+//   forms - contains starter template for form element styles
+//   html - contains styles for commonly used html elements
+//   media - contains reset styles for commonly used media elements
+//   type - contains heading styles and font utilities
+
+
+// ========================================
 // Configuration
 // Configures cascading site variables
 // ========================================
