@@ -1,7 +1,7 @@
 /*
 
   gulpfile
-    compiles sass, concats+uglifies js, optimizes images
+    compiles sass, concats+uglifies js, optimizes images, setup watch
 
 */
 
@@ -76,6 +76,18 @@ gulp.task('images', function() {
     .pipe(gulp.dest(site + 'images'));
 
 });
+
+
+// ========================================
+// Compile Font Icon Set
+// ========================================
+
+// !: This feature was excluded
+// !: The possibility of using an entire icon set exclusively is too high
+
+// Consider adding:
+//   https://www.npmjs.com/package/gulp-iconfont
+//   https://www.npmjs.com/package/gulp-iconfont-css
 
 
 // ========================================
