@@ -1,3 +1,15 @@
+/*
+
+  js/site
+    contains all javascript functions pertaining to the site
+
+*/
+
+
+// ========================================
+// Run Main Site Function
+// ========================================
+
 site();
 
 function site() {
@@ -11,9 +23,13 @@ function site() {
 }
 
 
+// ========================================
+// Additional Debug Function
+// ========================================
+
 function debug(e) {
 
-  // g
+  // if 'g' key is pressed down
   if (e.keyCode == 71) {
     if (document.body.classList.contains('debug-grid')) {
       document.body.classList.remove('debug-grid');
@@ -22,7 +38,7 @@ function debug(e) {
       document.body.classList.add('debug-grid');
     }
   }
-  // r
+  // if 'r' key is pressed down
   else if (e.keyCode == 82) {
     if (document.body.classList.contains('debug-ruler')) {
       document.body.classList.remove('debug-ruler');
