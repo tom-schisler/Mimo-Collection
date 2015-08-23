@@ -1,0 +1,41 @@
+/*
+
+  navigation/main
+    styles pertaining to main navigation only
+
+*/
+
+// ========================================
+// Main Navigation
+// ========================================
+
+.nav-main {
+
+  ul {}
+
+    li {}
+
+      a {}
+
+  // Unfortunately, some systems do not support the ability to class tiers
+  // In order to circumvent this, direct children selectors were used instead
+
+  > ul {
+
+    > li {
+
+      &:hover {
+
+        > ul {}
+
+      }
+
+      > a {}
+
+      > ul {}
+
+    }
+
+  }
+
+}

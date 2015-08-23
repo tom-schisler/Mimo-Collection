@@ -48,3 +48,5 @@ Temporary Items
 
 .sass-cache
 node_modules
+
+src/js/site.js

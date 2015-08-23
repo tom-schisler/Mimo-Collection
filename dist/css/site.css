@@ -2,7 +2,7 @@
 
   manifest
     gathers all partials,
-    compiles into manifest.css
+    compiles into site.css within /dist/
 
 */
 /*
@@ -1871,6 +1871,18 @@ body {
   structure/layouts
     contains styles for generic and specific layout elements
     does not contain styles for elements within these layout elements
+
+*/
+/*
+
+  navigation/behaviors
+    styles that define every single navigation module
+
+*/
+/*
+
+  navigation/main
+    styles pertaining to main navigation only
 
 */
 /*

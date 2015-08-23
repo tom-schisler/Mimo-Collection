@@ -1,4 +1,4 @@
-#Mimo Collection *//.
+#Mimo Collection °//.
 
 The primary intention of the Mimo Collection is to provide a skeleton framework for developers of any skill level to use as a simple start to any project.
 

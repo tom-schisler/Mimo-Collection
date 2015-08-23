@@ -2,16 +2,18 @@
 
   manifest
     gathers all partials,
-    compiles into manifest.css
+    compiles into site.css within /dist/
 
 */
 
 
 // ========================================
 // Table of Contents
+// Describes specific folder contents
 // ========================================
 
 // !: Ordered by @import sequence
+// These comments loosely relate to the comments above each partial
 
 // Configuration
 //   dynamic - variables for paths, columns, flexpoint, colors
@@ -37,6 +39,10 @@
 // Structure
 //   layouts - blank selector template for header, main, aside, and footer
 //   root - sets global properties and properties for html, body
+
+// Navigation
+//   behaviors - contains all behaviors for every navigation module
+//   main - styles for the main navigation only
 
 // Components
 //   buttons - contains general button styles and unique button styles
@@ -82,12 +88,12 @@
  'mimo/sonic-slide.scss';
 
 // Additional pieces that were not included (but still really useful!)
-// Salamander positioning: http://codepen.io/mimoduo/pen/vhlEj
-// Favaro Pivot: http://codepen.io/mimoduo/pen/pvRZKo
+//   Salamander positioning: http://codepen.io/mimoduo/pen/vhlEj
+//   Favaro Pivot: http://codepen.io/mimoduo/pen/pvRZKo
 
 
 // ========================================
-// Structure
+// Vendor
 // Defines vendor partials
 // ========================================
 
@@ -103,6 +109,16 @@
 @import
  'structure/root.scss',
  'structure/layouts.scss';
+
+
+// ========================================
+// Navigation
+// Defines navigation structure and styles
+// ========================================
+
+@import
+ 'navigation/behaviors.scss',
+ 'navigation/main.scss';
 
 
 // ========================================
