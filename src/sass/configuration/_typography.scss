@@ -1,7 +1,7 @@
 /*
 
   configuration/typography
-    stores values such as heading sizes, font families
+    stores values such as font families, content font properties, and heading sizes
 
 */
 
@@ -29,6 +29,7 @@ $font-icon: 'mimo';
 // Body Font Properties
 // ========================================
 
+// Applied to body {} within structure/root
 $content-size: 16;
 $content-line: 22;
 

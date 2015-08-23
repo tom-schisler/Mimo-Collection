@@ -11,13 +11,6 @@
 // Generic Buttons
 // ========================================
 
-// Common styles for all buttons
-%button {
-  display: inline-block;
-  text-align: center;
-  cursor: pointer;
-}
-
 // Defines button specific behavior and respective states of interactivity
 @mixin button($color) {
   background: $color;
@@ -27,17 +20,24 @@
     background: darken($color, 5%);
   }
 
-  &:active {}
+  &:active {
+    transform: scale(.95);
+  }
 
 }
 
-// Extended Button
+// Button Class
 // ----------------------------------------
 
 .button {
-  @extend %button;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
   @include button(#eee);
 }
+
+.button-modifier {}
+
 
 // HTML Button
 // ----------------------------------------

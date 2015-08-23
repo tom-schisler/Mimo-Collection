@@ -7,7 +7,9 @@
 
 
 // ========================================
-// Draggable Ruler
+// Debug Ruler
+// Display a draggable ruler
+// Helps to test element alignment
 // ========================================
 
 .ruler {
@@ -46,5 +48,50 @@
 
 
 // ========================================
-// Overlay Grid
+// Debug Grid
+// Displays a striped grid over the page
+// Helps to check your grid alignment
 // ========================================
+
+$stripes: null;
+
+@for $i from 0 through $column-base {
+
+  $stripes: append($stripes, rgba(#f0c, .25) (100% / $column-base * $i), comma);
+  $stripes: append($stripes, rgba(#f0c, 0) (100% / $column-base * $i), comma);
+  $stripes: append($stripes, rgba(#f0c, 0) (100% / $column-base * $i + ($column-between)), comma);
+  $stripes: append($stripes, rgba(#f0c, .25) (100% / $column-base * $i + ($column-between)), comma);
+
+}
+
+.debug-grid:before {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: 800;
+  display: block;
+  height: 100%;
+  max-width: em($column-boundary);
+  width: 100%;
+  content: '';
+  background:
+    linear-gradient(
+      to right,
+        $stripes);
+  transform: translate(-50%, 0);
+}
+
+
+// ========================================
+// Debug Outlines
+// Displays outlines around everything!
+// I heard this was helpful
+// ========================================
+
+.debug-outlines {
+
+  * {
+    outline: 1px solid rgba(#000, .25);
+  }
+
+}
