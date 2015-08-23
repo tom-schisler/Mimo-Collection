@@ -39,6 +39,6 @@ html {
   // over the relationship between rems and html
 
   body {
-    font-size: em($content-size);
+    font-size: em($content-size, 16);
     line-height: su(em($content-line));
   }

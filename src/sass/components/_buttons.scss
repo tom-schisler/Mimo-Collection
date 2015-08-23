@@ -11,29 +11,25 @@
 // Generic Buttons
 // ========================================
 
-// Defines button specific behavior and respective states of interactivity
-@mixin button($color) {
-  background: $color;
-  border-color: $color;
+.button {
+  display: inline-block;
+  margin: 0 em(4) em(10) 0;
+  padding: em(10) em(20);
+  text-align: center;
+  cursor: pointer;
+  transition:
+    border .3s,
+    background .3s,
+    box-shadow .3s,
+    color .3s,
+    transform .3s;
 
-  &:hover {
-    background: darken($color, 5%);
-  }
+  &:hover {}
 
   &:active {
     transform: scale(.95);
   }
 
-}
-
-// Button Class
-// ----------------------------------------
-
-.button {
-  display: inline-block;
-  text-align: center;
-  cursor: pointer;
-  @include button(#eee);
 }
 
 .button-modifier {}
@@ -49,8 +45,16 @@ button {}
 // Site Logo Anchor
 // ========================================
 
-// Use the max-width of your logo
-// Consider increasing the font-size or adding padding to enlarge the logo
+// Use if the site logo is text based
+.site-link {
+  display: block;
+  text-decoration: none;
+
+  &:hover {}
+
+}
+
+// Use if the site logo is image based
 .site-logo {
   display: block;
   overflow: hidden;
