@@ -41,6 +41,21 @@
 
 
 // ========================================
+// Compartment
+// ========================================
+
+@mixin compartment {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: rem($column-boundary);
+}
+
+.compartment {
+  @include compartment;
+}
+
+
+// ========================================
 // Clearfix
 // ========================================
 
