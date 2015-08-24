@@ -38,30 +38,15 @@ function debug(e) {
 
   // g
   if (e.keyCode == 71) {
-    if (document.body.classList.contains('debug-grid')) {
-      document.body.classList.remove('debug-grid');
-    }
-    else {
-      document.body.classList.add('debug-grid');
-    }
+    document.body.classList.toggle('debug-grid');
   }
   // o
   else if (e.keyCode == 79) {
-    if (document.body.classList.contains('debug-outlines')) {
-      document.body.classList.remove('debug-outlines');
-    }
-    else {
-      document.body.classList.add('debug-outlines');
-    }
+    document.body.classList.toggle('debug-outlines');
   }
   // r
   else if (e.keyCode == 82) {
-    if (document.body.classList.contains('debug-ruler')) {
-      document.body.classList.remove('debug-ruler');
-    }
-    else {
-      document.body.classList.add('debug-ruler');
-    }
+    document.body.classList.toggle('debug-ruler');
   }
 
 }
