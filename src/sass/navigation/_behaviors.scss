@@ -12,11 +12,25 @@
 
 nav {
 
-  a {
+  ul {}
 
-    &:hover {}
+    // Dropdowns
+    li {
 
-  }
+      &:hover {
+
+        ul {}
+
+      }
+
+    }
+
+      a {
+        display: block;
+
+        &:hover {}
+
+      }
 
 }
 

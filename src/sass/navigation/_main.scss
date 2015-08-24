@@ -2,6 +2,7 @@
 
   navigation/main
     styles pertaining to main navigation only
+    serves as a base navigation template for all other navigation elements
 
 */
 
@@ -16,26 +17,5 @@
     li {}
 
       a {}
-
-  // Unfortunately, some systems do not support the ability to class tiers
-  // In order to circumvent this, direct children selectors were used instead
-
-  > ul {
-
-    > li {
-
-      &:hover {
-
-        > ul {}
-
-      }
-
-      > a {}
-
-      > ul {}
-
-    }
-
-  }
 
 }
