@@ -20,7 +20,7 @@ function site() {
   var drawerTriggerClose = document.querySelector('.drawer-trigger-close');
   var drawer = function (event) {
     document.body.classList.toggle('drawer-active');
-  }
+  };
   drawerTrigger.addEventListener('click', drawer, false);
   drawerTriggerClose.addEventListener('click', drawer, false);
 

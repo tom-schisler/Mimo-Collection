@@ -25,10 +25,22 @@
 */
 /*
 
+  utilities/functions
+    contains a set of functions for converting values or stripping units
+
+*/
+/*
+
   utilities/common
     mixins that are frequently used to achieve a common task
 
 */
+.compartment {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 62.5rem;
+}
+
 .clear {
   zoom: 1;
 }
@@ -53,12 +65,6 @@
   width: 100%;
 }
 
-/*
-
-  utilities/functions
-    contains a set of functions for converting values or stripping units
-
-*/
 /*
 
   utilities/debug
@@ -156,7 +162,7 @@
   -webkit-transition: opacity .4s, visibility .4s, -webkit-transform .4s;
   transition: opacity .4s, visibility .4s, transform .4s;
 }
-[data-drawer-state="visible"] .drawer {
+.drawer-active .drawer {
   pointer-events: auto;
   opacity: 1;
   visibility: visible;
@@ -168,7 +174,6 @@
 }
 
 .drawer-trigger {
-  float: left;
   height: 3.75em;
   width: 3.75em;
 }
@@ -179,7 +184,7 @@
   height: 0.125em;
   width: 33.3333%;
   content: '';
-  background: rgba(0, 0, 0, 0.25);
+  background: #000;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -190,8 +195,8 @@
   margin-top: -0.25em;
 }
 .drawer-trigger:after {
-  -webkit-box-shadow: 0 0.25em 0 0 rgba(0, 0, 0, 0.25);
-  box-shadow: 0 0.25em 0 0 rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 0.25em 0 0 #000;
+  box-shadow: 0 0.25em 0 0 #000;
 }
 [data-drawer-state="visible"] .drawer-trigger:before {
   margin-top: 0;
@@ -1879,10 +1884,15 @@ body {
     styles that define every single navigation module
 
 */
+nav a {
+  display: block;
+}
+
 /*
 
   navigation/main
     styles pertaining to main navigation only
+    serves as a base navigation template for all other navigation elements
 
 */
 /*
